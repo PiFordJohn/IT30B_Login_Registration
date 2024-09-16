@@ -62,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             display: block;
             margin-bottom: 0.5em;
             font-weight: bold;
+            color:orangered;
         }
         .container input {
             width: 100%;
@@ -103,8 +104,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="container">
-    <h1>TOURIST REST AREA MANOLO FORTICH</h1>
-        <h2>Magandang Buhay!</h2>
+    <h1>Magandang Buhay!</h1>
+        <h2>TOURIST REST AREA MANOLO FORTICH</h2>
         <?php if (isset($error)) { echo "<div class='error'>$error</div>"; } ?>
         <form method="POST" action="">
             <label>Email:</label>
