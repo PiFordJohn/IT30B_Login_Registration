@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Register</title>
     <style>
         body {
-            background-image: url('background.jpg');
+            background-image: url('image/Tourist.jpg');
             background-size: cover;
             font-family: Arial, sans-serif;
         }
@@ -58,6 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
+<div class="container">
     <form method="POST" action="">
         <h2>Register</h2>
         <label>Username:</label><br>
@@ -68,5 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="password" name="password" required><br>
         <button type="submit">Register</button>
     </form>
+    </div>
 </body>
 </html>
