@@ -27,13 +27,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         body {
             background-image: url('image/Tourist.jpg');
             background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .container h2 {
+            color: orange;
+            margin-bottom: 1.5em;
         }
         form {
             margin: auto;
             width: 300px;
             padding: 1em;
-            background: white;
+            background-color: rgba(255, 255, 255, 0.3);
             border-radius: 1em;
         }
         label {
