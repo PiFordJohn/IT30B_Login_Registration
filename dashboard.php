@@ -23,6 +23,7 @@ $username = $_SESSION['username'];
         }
         h1 {
             font-size: 3em;
+            color: orangered;
         }
         a {
             color: orangered;
