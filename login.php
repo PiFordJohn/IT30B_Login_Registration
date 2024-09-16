@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="container">
-    <h1>Magandang Buhay!</h1>
+    <h1>Mabuhay!</h1>
         
         <?php if (isset($error)) { echo "<div class='error'>$error</div>"; } ?>
         <form method="POST" action="">
