@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             color: white;
         }
         .container {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: orange(0, 0, 0, 0.8);
             padding: 2em;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
