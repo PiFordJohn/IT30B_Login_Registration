@@ -25,7 +25,13 @@ $username = $_SESSION['username'];
             font-size: 3em;
         }
         a {
-            color: #ffcc00;
+            color: orangered;
+            font-size: 20px;
+        }
+        p{
+            color:orange;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 50px;
         }
     </style>
 </head>
