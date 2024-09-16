@@ -51,21 +51,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 1em;
         }
         label {
-            margin-bottom: .5em;
-            color: #333333;
+            color: orangered;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+            display: block;;
         }
         input {
-            padding: .5em;
-            color: #333333;
-            background: #f9f9f9;
-            border: none;
-            border-radius: 4px;
+            width: 100%;
+            padding: 0.5em;
             margin-bottom: 1em;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.8);
         }
         button {
             padding: 0.7em;
             color: white;
-            background-color: #333333;
+            background-color: orangered;
             border: none;
             border-radius: 5px;
         }
