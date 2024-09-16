@@ -38,7 +38,7 @@ $username = $_SESSION['username'];
 </head>
 <body>
     <h1>Welcome, <?php echo $username; ?>!</h1>
-    <p>Magandang Buhay!</p>
+    <p>Mabuhay!</p>
     <p><a href="logout.php">Logout</a></p>
 </body>
 </html>
