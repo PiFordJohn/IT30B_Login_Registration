@@ -84,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label>Password:</label><br>
         <input type="password" name="password" required><br>
         <button type="submit">Register</button>
+        <button class="back-button" onclick="history.back()">Back</button>
     </form>
     </div>
 </body>
