@@ -47,6 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
             width: 300px;
             text-align: center;
+        }    
+        .container h1{
+            color: orange;
+            font-style:inherit;
+            font-weight: 300;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
         .container h2 {
             color: red; 
