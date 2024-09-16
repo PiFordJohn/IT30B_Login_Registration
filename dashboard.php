@@ -14,7 +14,7 @@ $username = $_SESSION['username'];
     <title>Dashboard</title>
     <style>
         body {
-            background-image: url('background.jpg');
+            background-image: url('image/Tourist.jpg');
             background-size: cover;
             font-family: Arial, sans-serif;
             color: white;
