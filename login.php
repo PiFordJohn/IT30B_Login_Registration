@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="container">
     <h1>TOURIST REST AREA MANOLO FORTICH</h1>
-        <h2>Login</h2>
+        <h2>Magandang Buhay!</h2>
         <?php if (isset($error)) { echo "<div class='error'>$error</div>"; } ?>
         <form method="POST" action="">
             <label>Email:</label>
