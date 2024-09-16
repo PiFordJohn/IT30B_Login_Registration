@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .container button {
             width: 100%;
             padding: 0.7em;
-            background-color: red; 
+            background-color: orangered; 
             color: white;
             border: none;
             border-radius: 5px;
