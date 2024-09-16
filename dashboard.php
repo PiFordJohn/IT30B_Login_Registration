@@ -1,0 +1,37 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$username = $_SESSION['username'];
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        a {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, <?php echo $username; ?>!</h1>
+    <p>This is your dashboard.</p>
+    <p><a href="logout.php">Logout</a></p>
+</body>
+</html>
