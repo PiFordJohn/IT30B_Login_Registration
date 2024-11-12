@@ -8,62 +8,54 @@ $query = "
     SELECT 
         product.product_name, 
         product.product_id, 
-        product.batch_date, 
-        product.batch_number, 
+        batch.batch_date, 
+        batch.batch_number, 
         product.expiration_date, 
         product.total_stocks,
         supplier.supplier_name,
         category.category_name
     FROM 
         product
+    LEFT JOIN batch ON product.batch_number = batch.batch_number
+    LEFT JOIN supplier ON product.supplier_id = supplier.supplier_id
+    LEFT JOIN category ON product.category_id = category.category_id
 ";
 
-
+// Check if a search term is provided
 if ($searchTerm) {
     if (strpos($searchTerm, 'supplier:') === 0) {
-        // Search term starts with "supplier:", perform RIGHT JOIN with supplier
-        $query .= "
-            RIGHT JOIN supplier ON product.supplier_id = supplier.supplier_id
-            WHERE supplier.supplier_name LIKE ?";
+        // Search term starts with "supplier:", perform search on supplier name
+        $query .= " WHERE supplier.supplier_name LIKE ?";
         $searchTerm = '%' . substr($searchTerm, 9) . '%';  
     } elseif (strpos($searchTerm, 'category:') === 0) {
-        
-        $query .= "
-            LEFT JOIN category ON product.category_id = category.category_id
-            WHERE category.category_name LIKE ?";
+        // Search term starts with "category:", perform search on category name
+        $query .= " WHERE category.category_name LIKE ?";
         $searchTerm = '%' . substr($searchTerm, 9) . '%';  
     } elseif (strpos($searchTerm, 'batch_number:') === 0) {
-        
-        $query .= "
-            RIGHT JOIN product ON product.batch_number LIKE ?
-            WHERE product.batch_number LIKE ?";
-        $searchTerm = '%' . substr($searchTerm, 11) . '%';  
+        // Search term starts with "batch_number:", perform search on batch number
+        $query .= " WHERE batch.batch_number LIKE ?";
+        $searchTerm = '%' . substr($searchTerm, 13) . '%';  
     } else {
-        // General search across all fields
+        // General search across multiple fields
         $query .= "
-            LEFT JOIN supplier ON product.supplier_id = supplier.supplier_id
-            LEFT JOIN category ON product.category_id = category.category_id
             WHERE 
                 product.product_name LIKE ? OR 
                 supplier.supplier_name LIKE ? OR 
-                category.category_name LIKE ?";
+                category.category_name LIKE ? OR 
+                batch.batch_number LIKE ?";
         $searchTerm = '%' . $searchTerm . '%';  
     }
-} else {
-    // If no search term is provided, use INNER JOINs
-    $query .= "
-        LEFT JOIN supplier ON product.supplier_id = supplier.supplier_id
-        LEFT JOIN category ON product.category_id = category.category_id";
 }
 
+// Prepare and execute the query
 $stmt = $conn->prepare($query);
 
-
+// Bind the search term parameters if a WHERE clause is present
 if (strpos($query, 'WHERE') !== false) {
     if (strpos($searchTerm, 'batch_number:') !== false) {
-        $stmt->bind_param('ss', $searchTerm, $searchTerm);
+        $stmt->bind_param('s', $searchTerm);
     } else {
-        $stmt->bind_param('sss', $searchTerm, $searchTerm, $searchTerm);
+        $stmt->bind_param('ssss', $searchTerm, $searchTerm, $searchTerm, $searchTerm);
     }
 }
 
@@ -213,7 +205,7 @@ $conn->close();
             <?php endwhile; ?>
         </tbody>
     </table>
-    
+
     <div class="link-container">
         <a href="dashboard.php" class="back-link">Dashboard</a>
         <?php if ($searchTerm): ?>
