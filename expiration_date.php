@@ -58,13 +58,13 @@ $conn->close();
 <head>
     <title>Product Expiration Dates</title>
     <style>
-        /* Add your styles here */
+        
     </style>
 </head>
 <body>
     <h1>Product Expiration Dates</h1>
 
-    <!-- Filter options -->
+    
     <div class="filter-bar">
         <form action="expiration_date.php" method="GET">
             <label for="filter">Filter:</label>
