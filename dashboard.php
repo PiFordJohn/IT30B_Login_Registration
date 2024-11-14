@@ -117,12 +117,11 @@ $conn->close();
         </a>
     </div>
 
-    <!-- Add links for Add Product, Add Category, and Add Supplier -->
+    <!--links for Add Product, Add Category, and Add Supplier, and Update Products -->
     <div class="add-options">
         <a href="add_product.php" class="add-option-link">Add Product</a>
         <a href="category.php" class="add-option-link">Add Category</a>
         <a href="supplier.php" class="add-option-link">Add Supplier</a>
-        <!-- Add Update Products link -->
         <a href="total_products.php" class="add-option-link">Update Products</a>
     </div>
 

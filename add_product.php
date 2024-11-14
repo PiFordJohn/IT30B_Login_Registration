@@ -67,7 +67,7 @@ $conn->close();
             background-color: #f2f2f2;
         }
         h1 {
-            color: #333;
+            color: orange;
         }
         form {
             display: inline-block;
@@ -75,6 +75,10 @@ $conn->close();
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        label{
+            color:orangered;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
         }
         input[type="text"], input[type="date"], input[type="number"], select {
             width: 100%;
@@ -84,7 +88,7 @@ $conn->close();
             border-radius: 5px;
         }
         input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: orange;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -92,7 +96,7 @@ $conn->close();
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: orangered;
         }
         .back-link {
             display: block;

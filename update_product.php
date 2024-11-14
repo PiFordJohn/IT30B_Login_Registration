@@ -109,20 +109,21 @@ $conn->close();
     <h1>Update Product</h1>
 
     <form action="update_product.php?product_id=<?php echo $product_id; ?>" method="POST">
-        <label for="product_name">Product Name:</label>
-        <input type="text" id="product_name" name="product_name" value="<?php echo htmlspecialchars($product['product_name']); ?>" required>
+    <label for="product_name">Product Name:</label>
+    <input type="text" id="product_name" name="product_name" value="<?php echo htmlspecialchars($product['product_name']); ?>" required>
 
-        <label for="total_stocks">Total Stocks:</label>
-        <input type="number" id="total_stocks" name="total_stocks" value="<?php echo htmlspecialchars($product['total_stocks']); ?>" required>
+    <label for="total_stocks">Total Stocks:</label>
+    <input type="number" id="total_stocks" name="total_stocks" value="<?php echo htmlspecialchars($product['total_stocks']); ?>" required>
 
-        <label for="batch_date">Batch Date:</label>
-        <input type="date" id="batch_date" name="batch_date" value="<?php echo htmlspecialchars($product['batch_date']); ?>" required>
+    <label for="batch_date">Batch Date:</label>
+    <input type="date" id="batch_date" name="batch_date" value="<?php echo isset($product['batch_date']) ? htmlspecialchars($product['batch_date']) : ''; ?>" required>
 
-        <label for="expiration_date">Expiration Date:</label>
-        <input type="date" id="expiration_date" name="expiration_date" value="<?php echo htmlspecialchars($product['expiration_date']); ?>" required>
+    <label for="expiration_date">Expiration Date:</label>
+    <input type="date" id="expiration_date" name="expiration_date" value="<?php echo isset($product['expiration_date']) ? htmlspecialchars($product['expiration_date']) : ''; ?>" required>
 
-        <input type="submit" value="Update Product">
-    </form>
+    <input type="submit" value="Update Product">
+</form>
+
     <p><a href="total_products.php" class="back-link">Back to Products</a></p>
 
 </body>

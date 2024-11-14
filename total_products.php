@@ -140,7 +140,7 @@ $conn->close();
             text-decoration: underline;
         }
         .update-btn, .delete-btn {
-            display: flex;
+            display:inline-block;
             justify-content: center;
             align-items: center;
             background-color: orangered;
